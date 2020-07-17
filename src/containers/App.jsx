@@ -12,9 +12,37 @@ const App = () => (
     <Header />
     <Search />
 
-    <Categories>
+    <Categories title='MI lista'>
       <Carousel>
         <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+      </Carousel>
+    </Categories>
+
+    <Categories title='Tendencias'>
+      <Carousel>
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+        <CarouselItem />
+      </Carousel>
+    </Categories>
+
+    <Categories title='Originasles de platziVideo'>
+      <Carousel>
         <CarouselItem />
         <CarouselItem />
         <CarouselItem />
