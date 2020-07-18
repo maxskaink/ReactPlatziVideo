@@ -1,4 +1,5 @@
 import React from 'react';
+import ProptTypes from 'prop-types'
 import '../assets/styles/components/CarouselItem.scss';
 import PlayIcon from '../assets/static/play-icon.png';
 import PlusIcon from '../assets/static/plus-icon.png';
@@ -16,5 +17,13 @@ const CarouselItem = ({ cover, title, year, contentRating, duration }) => (
     </div>
   </div>
 );
+
+CarouselItem.proptTypes = {
+  cover: ProptTypes.string,
+  title: ProptTypes.string,
+  year: ProptTypes.number,
+  contentRating: ProptTypes.number,
+  duration: ProptTypes.number,
+};//Declaramos que tipo de variables vamos a resibir en este archivo :v
 
 export default CarouselItem;
