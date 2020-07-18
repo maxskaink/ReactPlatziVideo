@@ -49,7 +49,11 @@ module.exports = {
       ],
     },
     ],
-  }, //Se crean las reglas
+  },
+  devServer: {
+    historyApiFallback: true,
+  },
+  //Se crean las reglas
 
   plugins: [
     new HtmlWebPackPlugin({
