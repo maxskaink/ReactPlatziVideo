@@ -1,5 +1,5 @@
 import React from 'react';
-import ProptTypes from 'prop-types'
+import ProptTypes from 'prop-types';
 import '../assets/styles/components/CarouselItem.scss';
 import PlayIcon from '../assets/static/play-icon.png';
 import PlusIcon from '../assets/static/plus-icon.png';
