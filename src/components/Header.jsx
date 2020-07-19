@@ -16,7 +16,10 @@ const Header = () => (
       </div>
       <ul>
         <li><a href='/'>Cuenta</a></li>
-        <li> <Link to='/login'> Iniciar Secion </Link></li>
+        <li>
+          {' '}
+          <Link to='/login'> Iniciar Secion </Link>
+        </li>
       </ul>
     </div>
   </header>
