@@ -171,7 +171,7 @@ const initialState = {
   ],
 };
 
-const store = createStore(reducer, initialState);
+const store = createStore(reducer, initialState);//Se inicializa el estado que se le pasa en el segundo caso, y es procesado por el reducer
 
 ReactDOM.render(
   <Provider store={store}>
