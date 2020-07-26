@@ -17,3 +17,12 @@ export const deleteFavorite = (payload) => {
     }
   );
 };
+
+export const openVideoPLayer = (payload) => {
+  return (
+    {
+      type: 'PLAY_VIDEO',
+      payload,
+    }
+  )
+}

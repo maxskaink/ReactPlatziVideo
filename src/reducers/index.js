@@ -13,6 +13,14 @@ const reducer = (state, action) => {
         ...state,
         myList: state.myList.filter((items) => items.id !== action.payload),
       };
+    case 'PLAY_VIDEO':
+      return {
+        ...state,
+        videoPlayer: {
+          url: action.payload,
+          Player: true
+        }
+      };
     default:
       return state;
   }
