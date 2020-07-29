@@ -3,12 +3,14 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { loginRequest } from '../actions';
 import googleIcon from '../assets/static/google-icon.png';
 import twitterIcon from '../assets/static/twitter-icon.png';
 import '../assets/styles/components/Login.scss';
 
-const Login = () => {
+const Login = (props) => {
 
   const [form, setValue] = useState({
     email: '',
@@ -21,8 +23,10 @@ const Login = () => {
     });
   };
 
-  const handleSubmit= (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
+    props.loginRequest(form);
+    props.history.push('/');
     console.log(form);
   };
 
@@ -30,7 +34,7 @@ const Login = () => {
     <section className='login'>
       <section className='login__container'>
         <h2>Inicia sesión</h2>
-        <form className='login__container--form' onSubmit={handleSubmit} >
+        <form className='login__container--form' onSubmit={handleSubmit}>
           <input name='email' className='input' type='text' placeholder='Correo' onChange={handleInput} />
           <input name='password' className='input' type='password' placeholder='Contraseña' onChange={handleInput} />
           <button className='button'>Iniciar sesión</button>
@@ -65,4 +69,8 @@ const Login = () => {
   );
 };
 
-export default Login;
+const mapDispacthToProps = {
+  loginRequest,
+};
+
+export default connect(null, mapDispacthToProps)(Login);

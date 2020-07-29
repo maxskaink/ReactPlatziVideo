@@ -18,8 +18,13 @@ const reducer = (state, action) => {
         ...state,
         videoPlayer: {
           url: action.payload,
-          Player: true
-        }
+          Player: true,
+        },
+      };
+    case 'LOGIN_REQUEST':
+      return {
+        ...state,
+        user: action.payload,
       };
     default:
       return state;

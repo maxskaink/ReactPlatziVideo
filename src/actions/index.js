@@ -24,5 +24,12 @@ export const openVideoPLayer = (payload) => {
       type: 'PLAY_VIDEO',
       payload,
     }
-  )
-}
+  );
+};
+
+export const loginRequest = (payload) => {
+  return ({
+    type: 'LOGIN_REQUEST',
+    payload,
+  });
+};
