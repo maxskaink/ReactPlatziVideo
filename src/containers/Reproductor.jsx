@@ -4,7 +4,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import '../assets/styles/Reproductor.scss';
-import { array } from 'prop-types';
+import { array, string } from 'prop-types';
 
 const Reproductor = (props) => {
   const { videoPlayer } = props;
