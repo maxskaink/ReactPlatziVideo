@@ -1,8 +1,15 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable no-unused-vars */
+/* eslint-disable prefer-const */
 import React from 'react';
 import { connect } from 'react-redux';
 import '../assets/styles/Reproductor.scss';
+import { array } from 'prop-types';
 
-const Reproductor = ({ videoPlayer }) => {
+const Reproductor = (props) => {
+  const { videoPlayer } = props;
+  const { match } = props;
+  const urlMedia = videoPlayer.filter((array) => array.id == match.params.url);
   let Media,
     iconoPlay,
     iconoMute,
@@ -26,6 +33,7 @@ const Reproductor = ({ videoPlayer }) => {
     iconoMoreVolume = icono;
   };
   const playOrPause = () => {
+    console.log(urlMedia);
     if (Media.paused) {
       Media.play();
       if (!iconoPlay.classList.contains('play')) {
@@ -74,30 +82,21 @@ const Reproductor = ({ videoPlayer }) => {
     }
   };
   return (
-    <>
-      {
-        videoPlayer.url ? (
-          <>
-            <div className='reproductor'>
-              <video className='movie' src={videoPlayer.url} ref={(a) => traerMedia(a)} autoPlay />
-              <div className='controls'>
-                <input type='button' id='playButton' className='button_control play' onClick={playOrPause} ref={(a) => traerButtonPlay(a)} />
-                <input type='button' id='muteButton' className='button_control mute' onClick={muteOrUnmute} ref={(a) => traerButtonMute(a)} />
-                <input type='button' id='lessVolumeButton' className='button_control less_Volume' value='-' onClick={lessVolume} ref={(a) => traerButtonLessVolume(a)} />
-                <input type='button' id='moreVolumeButton' className='button_control more_Volume' value='+' onClick={moreVolume} ref={(a) => traerButtonMoreVolume(a)} />
-              </div>
-            </div>
-          </>
-        ) :
-          <h1 className='aviso'>No has seleccionado ningun video, por favor ve al incio y selecciona un video</h1>
-      }
-    </>
+    <div className='reproductor'>
+      <video className='movie' src={urlMedia[0].source} ref={(a) => traerMedia(a)} autoPlay />
+      <div className='controls'>
+        <input type='button' id='playButton' className='button_control play' onClick={playOrPause} ref={(a) => traerButtonPlay(a)} />
+        <input type='button' id='muteButton' className='button_control mute' onClick={muteOrUnmute} ref={(a) => traerButtonMute(a)} />
+        <input type='button' id='lessVolumeButton' className='button_control less_Volume' value='-' onClick={lessVolume} ref={(a) => traerButtonLessVolume(a)} />
+        <input type='button' id='moreVolumeButton' className='button_control more_Volume' value='+' onClick={moreVolume} ref={(a) => traerButtonMoreVolume(a)} />
+      </div>
+    </div>
   );
 };
 
 const mapStateToProps = (state) => {
   return {
-    videoPlayer: state.videoPlayer,
+    videoPlayer: [...state.trends, ...state.originals],
   };
 };
 
