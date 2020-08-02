@@ -30,7 +30,7 @@ const Header = (props) => {
         <ul>
           {
             user.email ?
-              <li><a href='#nada' onClick={logout} >Cerrar Cesion</a></li> : (
+              <li><a href='#nada' onClick={logout}>Cerrar Cesion</a></li> : (
                 <li>
                   <Link to='/login'> Iniciar Sesión </Link>
                 </li>

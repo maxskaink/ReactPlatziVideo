@@ -47,3 +47,10 @@ export const registerRequest = (payload) => {
     payload,
   });
 };
+
+export const searchRequest = (payload) => {
+  return ({
+    type: 'SEARCH_REQUEST',
+    payload,
+  });
+};

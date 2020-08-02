@@ -20,7 +20,7 @@ const initialState = {
       'contentRating': '16+',
       'duration': 164,
       'cover': 'http://dummyimage.com/800x600.png/99118E/ffffff',
-      'description': 'Vestibulum ac est lacinia nisi venenatis tristique',
+      'description': 'Es la historia de una conejo obeso',
       'source': 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
     },
     {
@@ -33,7 +33,7 @@ const initialState = {
       'contentRating': '16+',
       'duration': 137,
       'cover': 'http://dummyimage.com/800x600.png/302140/ffffff',
-      'description': 'Vestibulum ac est lacinia nisi venenatis tristique',
+      'description': 'Creo que es una de un niño rarito en la nieve',
       'source': 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4',
     },
     {
@@ -46,7 +46,7 @@ const initialState = {
       'contentRating': '16+',
       'duration': 163,
       'cover': 'http://dummyimage.com/800x600.png/5472FF/ffffff',
-      'description': 'Vestibulum ac est lacinia nisi venenatis tristique',
+      'description': 'Es el mejor profesor de platzi, fredi vega jsjsj',
       'source': 'https://mdstrm.com/video/58333e214ad055d208427db5.mp4',
     },
     {
@@ -173,6 +173,7 @@ const initialState = {
     'url': '',
     'Player': false,
   },
+  'search': [],
 };
 
 const composeEnhacers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

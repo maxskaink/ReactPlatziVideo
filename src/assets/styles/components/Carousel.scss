@@ -1,7 +1,9 @@
 .carousel {
-    overflow: scroll;
+    overflow-y: hidden;
+    overflow-x: auto;
     padding-left: 30px;
     width: 100%;
+    max-width: 1290px;
     position: relative;
   }
 

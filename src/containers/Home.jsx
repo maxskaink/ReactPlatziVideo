@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'; //useState:Manejar estado  useEffects: Hacer transmiciones, hacer peticiones a ua API
@@ -9,10 +10,23 @@ import CarouselItem from '../components/CarouselItem';
 import '../assets/styles/App.scss';
 import useInitialState from '../hooks/useInitialState';
 
-const Home = ({ myList, trends, originals }) => {
+const Home = (props) => {
+  const { myList, trends, originals, search } = props;
   return (
     <>
-      <Search />
+      <Search history={props.history} />
+      {
+        search.length > 0 && (
+          <Categories title='Encontramos esto'>
+            <Carousel>
+              {
+                // eslint-disable-next-line react/jsx-props-no-spreading
+                search.map((item) => <CarouselItem key={item.id} {...item} isList />)
+              }
+            </Carousel>
+          </Categories>
+        )
+      }
       {myList.length > 0 && (
         <Categories title='MI lista'>
           <Carousel>
@@ -50,6 +64,7 @@ const mapStateToProps = (state) => {
     myList: state.myList,
     trends: state.trends,
     originals: state.originals,
+    search: state.search,
   };
 };
 

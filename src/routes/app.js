@@ -6,7 +6,6 @@ import Register from '../containers/Register';
 import NotFound from '../containers/NotFound';
 import Layout from '../components/Layout';
 import Reproductor from '../containers/Reproductor';
-import SearchContainer from '../containers/SearchContainer';
 
 const App = () => (
   <BrowserRouter>
@@ -16,7 +15,6 @@ const App = () => (
         <Route exact path='/login' component={Login} />
         <Route exact path='/register' component={Register} />
         <Route exact path='/reproductor/:url' component={Reproductor} />
-        <Route exact path='/buscar/:search' component={SearchContainer} />
         <Route component={NotFound} />
       </Switch>
     </Layout>

@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import '../assets/styles/components/Search.scss';
 import { element } from 'prop-types';
+import { searchRequest } from '../actions';
 
 const Search = (props) => {
   const [elements, getElements] = useState([]);
@@ -14,15 +16,12 @@ const Search = (props) => {
   const downKey = (key) => {
     if (key.keyCode === 13) {
       if (inputSearch.value.length > 0) {
-        console.log(inputSearch.value);
-        console.log(props.history);
-        debugger
-        props.history.push(`/buscar${inputSearch.value}`);
+        console.log('hola buenos dias');
       }
     }
   };
   const searchMedia = () => {
-
+    props.searchRequest(inputSearch.value);
   };
 
   return (
@@ -34,11 +33,20 @@ const Search = (props) => {
         className='input input_home'
         placeholder='Buscar...'
         onKeyDown={downKey}
+        onChange={searchMedia}
         ref={(a) => getElement(a)}
       />
     </section>
   );
 };
-export default Search;
+
+const mapStateToProps = (state) => {
+  return ({ ...state });
+};
+const mapDispathToProps = {
+  searchRequest,
+};
+
+export default connect(mapStateToProps, mapDispathToProps)(Search);
 
 //onKeyPress
