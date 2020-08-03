@@ -21,7 +21,7 @@ const Home = (props) => {
             <Carousel>
               {
                 // eslint-disable-next-line react/jsx-props-no-spreading
-                search.map((item) => <CarouselItem key={item.id} {...item} isList />)
+                search.map((item) => <CarouselItem key={item.id} {...item} />)
               }
             </Carousel>
           </Categories>
